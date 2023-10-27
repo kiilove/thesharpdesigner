@@ -1,20 +1,26 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Main from "./pages/Main";
-import { Route, Routes } from "react-router-dom";
-import Dashboard from "./pages/Dashboard";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import CustomerList from "./pages/CustomerList";
+
+import CustomerNew from "./pages/CustomerNew";
 
 function App() {
   return (
-    <div className="flex w-full h-full ">
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Main />}>
-          <Route index element={<Dashboard />} />
-          <Route path="/customers" element={<CustomerList />} />
-        </Route>
+        <Route path="/" element={<Main />} />
+        <Route
+          path="/customerlist"
+          element={<Main children={<CustomerList />} />}
+        />
+        <Route
+          path="/customernew"
+          element={<Main children={<CustomerNew />} />}
+        />
       </Routes>
-    </div>
+    </BrowserRouter>
   );
 }
 
