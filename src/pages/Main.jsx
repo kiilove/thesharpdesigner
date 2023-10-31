@@ -39,7 +39,10 @@ const Main = ({ children }) => {
             {
               key: "2",
               icon: <VideoCameraOutlined />,
-              label: "nav 2",
+              label: "테스트",
+              onClick: () => {
+                navigate("/test");
+              },
             },
             {
               key: "3",
